@@ -1,0 +1,8 @@
+*
+*.*
+!*/
+!.gitignore
+!Makefile
+!src/*.cpp
+!src/*.h
+!rom/*.ch8
