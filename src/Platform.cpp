@@ -10,20 +10,22 @@
 #define KEY_ESC 27
 
 
-Platform::Platform(const int screen_width, const int screen_height, bool &success) {
+Platform::Platform(const int min_width, const int min_height, bool &success) {
     success = true;
     initscr();
     cbreak();
     noecho();
     keypad(stdscr, TRUE);
     timeout(TIMEOUT); // non-blocking getch()
-    row_start = (LINES - screen_height) / 2;
-    col_start = (COLS  - screen_width ) / 2;
-    if (LINES < screen_height || COLS < screen_width) {
-        mvprintw(0, 0, "Current window size: %d * %d", LINES, COLS);
-        mvprintw(1, 0, "Needed  window size: %d * %d (Min)", screen_height, screen_width);
+    row_start = (LINES - min_height) / 2;
+    col_start = (COLS  - min_width ) / 2;
+    if (LINES < min_height || COLS < min_width) {
+        timeout(-1);
+        mvprintw(0, 0, "Current window size: H%d * W%d", LINES, COLS);
+        mvprintw(1, 0, "Needed  window size: H%d * W%d (Min)", min_height, min_width);
         mvprintw(2, 0, "Press any key to exit");
         refresh();
+        getch();
         success = false;
     }
 }

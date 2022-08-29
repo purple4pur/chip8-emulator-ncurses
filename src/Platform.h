@@ -13,7 +13,7 @@
 
 class Platform {
   public:
-    Platform(const int screen_width, const int screen_height, bool &success);
+    Platform(const int min_width, const int min_height, bool &success);
     ~Platform();
 
     std::string SelectROM(const char* base_dir, bool &success);

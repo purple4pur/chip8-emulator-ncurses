@@ -23,11 +23,7 @@ int main(int argc, char** argv) {
     }
 
     Platform platform(VIDEO_WIDTH, VIDEO_HEIGHT, success);
-    if (!success) {
-        timeout(-1);
-        getch();
-        return 1;
-    }
+    if (!success) return 1;
 
     std::string rom_filename = platform.SelectROM("rom", success);
     if (!success) return 0; // pressed ESC
