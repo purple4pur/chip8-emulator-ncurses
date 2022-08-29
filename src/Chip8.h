@@ -130,7 +130,7 @@ class Chip8 {
     void OP_Cxkk();
     // display n-byte sprite starting at index at (Vx, Vy), set VF = collision
     // "sprite pixel" = pixel to be plotted
-	// +--------------> x    i.e. "F" in memory:
+	// +--------------> x    i.e. 'F' in memory:
 	// |  (Vx,Vy)               index --> 0xF0
 	// |    +---------+                   0x80
 	// |    |    8    |                   0xF0
