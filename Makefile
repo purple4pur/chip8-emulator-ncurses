@@ -25,6 +25,6 @@ build-debug:
 build-all: build build-debug
 
 clean:
-	-rm chip8_emulator chip8_emulator_debug
+	-rm -f chip8_emulator chip8_emulator_debug
 
 .PHONY: help build build-debug build-all clean
