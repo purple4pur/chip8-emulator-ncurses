@@ -14,17 +14,23 @@ ROM 来自于 [corax89/chip8-test-rom](https://github.com/corax89/chip8-test-rom
 
 > 编译需要用到 ncurses 库和支持 c++17 的 g++
 
+Tested on Linux 20.04:
+
 ```
-make build
-./chip8_emulator
+$ sudo apt install g++ libncurses5-dev
+$ make run
 ```
+
+`make help` 查看帮助菜单
 
 ## Usage
 
 1. 运行时可以指定每个 cycle 的时延（即模拟器速度），默认为 3ms，然而实际上速度也受限于终端打印字符的速度
 
 ```
-./chip8_emulator [Delay_in_ms]
+$ ./chip8_emulator [delay_in_ms]
+  or
+$ make run t=[delay_in_ms]
 ```
 
 2. 终端至少需要 H64 * W32 的大小，为了更好的显示效果，可以适当减小行间距
